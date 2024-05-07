@@ -3,15 +3,16 @@
 This protocol describe step by step how to use DANTE, DANTE_LTR and TideCluster tools to annotated LTR-retrotransposons and tandem repeats in genome assemblies on the RepeatExplorer Galaxy server (https://repeatexplorer-elixir.cerit-sc.cz/). DANTE_LTR was developed for annotation of LTR-RTs in Viridiplantae genomes. TideCluster can be used for annotation of tandem repeats in any genome assembly.
 
 
+The annotation include following steps (see figure below). 
+- Identification of individual LTR-RT protein domains using DANTE tool (**A**). -
+- Identification of complet eLTR-retrotransposons using DANTE_LTR tool based on DANTE domain annotation (**B**)
+- Creation of library of representative LTR-retrotransposons from complete LTR-retrotransposons(**C**)
+- Library of LTR-retrotransposons is then used to annotate remaining LTR-RTs in genome assembly using similarity based approach. This allows to annotate also LTR-RTs sequences which are not complete elements and could not be identified in step directly by DANTE_LTR (**D**).
+- Structure base annotation of tandem repeats using TideCluster tool (**E**). 
+- Preparation of library of tandem repeats from TideCluster output (**F**). 
+- Annotation of tandem repeats in genome assembly using library based approach. This allows to annotate tandem repeats which were too divergent to be identified directly by TideCluster (**G**). This step can be used to fill in gaps in tandem repeat annotation provided by TideCluster.
+- Annotation of tandem repeats can be then used to improve LTR-RT annotation by substracting tandem repeat annotation from LTR-RT annotation (**H**). This step is recommended as some tandem repeats in the genome share similarity with LTR-RTs and could be misannotated as LTR-RTs when library based approach is used.
 ![workflow](workflow.png)
-Annotation workflow.
-The annotation include following steps. 
-1. Identification of LTR-RT protein domains using DANTE tool
-2. Identification of complete LTR-retrotransposons using DANTE_LTR tool based on DANTE domain annotation
-3. Creation of library of representative LTR-retrotransposons from complete LTR-retrotransposons identified in step 2
-4. Library of LTR-retrotransposons is then used to annotate remaining LTR-RTs in genome assembly similarity based approach. This allows to annotate LTR-RTs which are not complete and could not be identified in step 2.
-5. Structure base annotation of tandem repeats using TideCluster tool.
-6. Annotation of tandem repeats in genome assembly using library based approach. This allows to annotate tandem repeats which were too divergent to be identified in step 5.
 
 
 
