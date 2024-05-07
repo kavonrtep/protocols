@@ -1,0 +1,6 @@
+cref:
+  figure: "Fig. @fig:"
+  table: "Tab. @table:"
+  section: "Seq. @sec:"
+  equation: "Eq. @eq:"
+
