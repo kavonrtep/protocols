@@ -1,8 +1,10 @@
 # Genome annotation with DANTE_LTR and TideCluster on RepeatExplorer Galaxy server
 
-This protocol describe step by step how to use DANTE, DANTE_LTR and TideCluster tools to annotated LTR-retrotransposons and tandem repeats in genome assemblies on the RepeatExplorer Galaxy server. DANTE_LTR was developed for annotation of LTR-RTs in Viridiplantae genomes. TideCluster can be used for annotation of tandem repeats in any genome assembly.
+This protocol describe step by step how to use DANTE, DANTE_LTR and TideCluster tools to annotated LTR-retrotransposons and tandem repeats in genome assemblies on the RepeatExplorer Galaxy server (https://repeatexplorer-elixir.cerit-sc.cz/). DANTE_LTR was developed for annotation of LTR-RTs in Viridiplantae genomes. TideCluster can be used for annotation of tandem repeats in any genome assembly.
 
 
+![workflow](workflow.png)
+Annotation workflow.
 The annotation include following steps. 
 1. Identification of LTR-RT protein domains using DANTE tool
 2. Identification of complete LTR-retrotransposons using DANTE_LTR tool based on DANTE domain annotation
@@ -102,7 +104,7 @@ This step will create combined GFF3 with tandem repeats annotated but TideCluste
 
 - Tool: bedtools subtract
 - Input data
-  - *First dataset (-a)*: GFF3 file with LTR-RT annotation from step @sec:repeatmasker
-  - *Second dataset(-b)*: GFF3 file with merged tandem repeat annotation from previous step
+  - *First dataset (-a)*: GFF3 file with LTR-RT annotation from step 3.1.
+  - *Second dataset(-b)*: GFF3 file with merged tandem repeat annotation from step 4.1 
 - Parameters: use default parameters (overlap in either strand)
 - Output: GFF3 file with LTR-RT annotation without tandem repeats
